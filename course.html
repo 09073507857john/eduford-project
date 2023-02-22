@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>course page</title>
+    <link rel="stylesheet" href="./animate/animate.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        text-decoration: none;
+      }
+      .hero {
+        height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.6),
+            rgba(0, 0, 0, 0.6)
+          ),
+          url(./eduford_img/background.jpg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .main-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 1rem;
+      }
+
+      .main-container .logo {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: white;
+      }
+      span {
+        color: cornflowerblue;
+      }
+
+      .navlinks-con {
+        display: flex;
+      }
+
+      .navlinks-con .links {
+        padding: 0 1rem;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .navlinks-con .links::after {
+        content: "";
+        margin: auto;
+        display: block;
+        width: 0;
+        height: 0.188rem;
+        background-color: cornflowerblue;
+        transition: 0.5s;
+      }
+
+      .links:hover::after {
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .menu-btn {
+        color: white;
+        font-size: 1.8rem;
+        border: none;
+        background-color: transparent;
+        display: none;
+      }
+      /* media query */
+      @media (max-width: 768px) {
+        .main-container {
+          padding: 0.5rem 0.5rem;
+        }
+        .navlinks-con {
+          position: absolute;
+          top: 4rem;
+          left: 0;
+          background-color: black;
+          width: 100%;
+          max-width: 450px;
+          /* height: 16rem; */
+          height: 0;
+          overflow: hidden;
+          flex-direction: column;
+          transition: 0.5s;
+          z-index: 2;
+        }
+
+        .navlinks-con .links {
+          text-align: center;
+          padding: 1rem;
+        }
+
+        .menu-btn {
+          display: block;
+        }
+
+        .show {
+          height: 16rem;
+        }
+        h2 {
+          font-size: 0.5rem;
+        }
+      }
+      /* end of media query */
+
+      .hero-content h2 {
+        font-size: 2.2rem;
+        color: white;
+        text-transform: capitalize;
+      }
+
+      .hero-content {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      /* beginning of course section */
+      .courses {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        margin-top: 6.2rem;
+        margin-bottom: 6.2rem;
+      }
+
+      .courses h2 {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+      }
+
+      .courses p {
+        font-size: 1rem;
+        margin-bottom: 1.8rem;
+      }
+
+      .flex {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .course-col {
+        flex-basis: 30%;
+        background-color: #98b7f1;
+        padding: 0.6rem 1.8rem;
+        border-radius: 0.6rem;
+      }
+
+      .course-col h2 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 0.6rem 0 1rem;
+      }
+
+      .course-col p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        text-align: center;
+      }
+
+      /* media query for courses */
+      @media (max-width: 768px) {
+        .flex {
+          flex-direction: column;
+          gap: 0.6rem;
+        }
+      }
+      /* end of course section */
+      /* beginning of footer section */
+      .footer {
+        width: 90%;
+        margin: auto;
+        text-align: center;
+      }
+      .footer h3 {
+        font-size: 1.7rem;
+        text-transform: capitalize;
+        margin-bottom: 2.5rem;
+      }
+
+      .footer p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+
+      .footer .fa {
+        color: #0e5ae7;
+      }
+
+      .icons {
+        margin: 2rem 0;
+      }
+
+      .icons a {
+        margin: 0 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- for hero section -->
+    <header class="hero">
+      <!-- for nav bar -->
+      <div class="main-container">
+        <a href="#" class="logo">EDU<span>FORD</span></a>
+        <div class="navlinks-con" id="navlinks">
+          <a href="./index.html" class="links" target="_blank">home</a>
+          <a href="./about.html" class="links" target="_blank">about</a>
+          <a href="#" class="links">course</a>
+          <a href="#" class="links">blog</a>
+          <a href="#" class="links">contact</a>
+        </div>
+        <button class="menu-btn" onclick="toggleNav()">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+      <!-- hero content -->
+      <div class="hero-content">
+        <div class="wow fadeInLeft">
+          <h2>our courses</h2>
+        </div>
+      </div>
+    </header>
+    <!-- end of hero content -->
+    <!-- beginning of section -->
+    <section class="courses">
+      <h2>courses we offer</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+      <div class="flex">
+        <div class="course-col wow fadeInLeft" data-wow-delay="1.5s">
+          <h2>pre degree</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur.<br />
+            Rerum tempore laudantium beatae harum baly qua setien haram sa
+            imla<br />
+            exercitationem est, enim quod. Cumque.
+          </p>
+        </div>
+
+        <div class="course-col wow fadeInLeft" data-wow-delay="1s">
+          <h2>under graduate</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur.<br />
+            Rerum tempore laudantium beatae harum baly qua setien haram sa
+            imla<br />
+            exercitationem est, enim quod. Cumque.
+          </p>
+        </div>
+
+        <div class="course-col wow fadeInLeft" data-wow-delay="0.5s">
+          <h2>post graduate</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur. <br />
+            Rerum tempore laudantium beatae harum baly qua setien haram sa imla
+            <br />
+            exercitationem est, enim quod. Cumque.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- end of course section -->
+    <section class="footer">
+      <h3>about us</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quod
+        officiis dolores eligendi, repellendus a, facilis obcaecati <br />
+        voluptatibus adipisci, iste voluptate. Voluptatibus consequuntur
+        eligendi eos!
+      </p>
+
+      <div class="icons">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </section>
+    <!-- end of footer section -->
+
+    <!-- beginning of javascript code -->
+    <script src="./wow/wow.min.js"></script>
+    <!-- for javascript -->
+    <script>
+      new WOW().init();
+
+      let navlinkCon = document.getElementById("navlinks");
+
+      function toggleNav() {
+        navlinkCon.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
